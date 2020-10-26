@@ -1,0 +1,19 @@
+{
+	"name": "SapBw1",
+	"type": "Microsoft.DataFactory/factories/linkedservices",
+	"properties": {
+		"annotations": [],
+		"type": "SapBw",
+		"typeProperties": {
+			"server": "192.168.9.85",
+			"systemNumber": "00",
+			"clientId": "BWP",
+			"userName": "fmarin",
+			"encryptedCredential": "eyJDcmVkZW50aWFsSWQiOiJjMmQ4YzkzMy1iMTE0LTQzZDYtOTk2OC05MzVjMDZhMmU0NzYiLCJWZXJzaW9uIjoiMi4wIiwiQ2xhc3NUeXBlIjoiTWljcm9zb2Z0LkRhdGFQcm94eS5Db3JlLkludGVyU2VydmljZURhdGFDb250cmFjdC5DcmVkZW50aWFsU1UwNkNZMTQifQ=="
+		},
+		"connectVia": {
+			"referenceName": "integrationRuntime1",
+			"type": "IntegrationRuntimeReference"
+		}
+	}
+}
