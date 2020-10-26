@@ -17,16 +17,115 @@
 				"typeProperties": {
 					"source": {
 						"type": "SapBwSource",
-						"query": "SELECT\n\t{ [Measures].[624IRRSR9LDWI932059BH0PM2],\n\t[Measures].[624IRRSR9LDWI932059BH246I],\n\t[Measures].[624IRRSR9LDWI932059BH2GTM] } ON COLUMNS,\n\tNON EMPTY\n\t{ [0BILL_TYPE].[LEVEL01].MEMBERS,\n\t[0COMP_CODE].[LEVEL01].MEMBERS,\n\t[0DOC_NUMBER].[LEVEL01].MEMBERS } ON ROWS\nFROM ZASSDM02/ZASSD_EXPORTACIONES_02_PBI\nSAP VARIABLES [ZYCAP0] INCLUDING '2020' [ZITMES] INCLUDING '10'"
+						"query": "SELECT\n\t{ [Measures].[624IRRSR9LDWI932059BH0PM2],\n\t[Measures].[624IRRSR9LDWI932059BH246I],\n\t[Measures].[624IRRSR9LDWI932059BH2GTM] } ON COLUMNS,\n\tNON EMPTY\n\t{ [0BILL_TYPE].[LEVEL01].MEMBERS,\n\t[0COMP_CODE].[LEVEL01].MEMBERS,\n        [0DOC_NUMBER].[LEVEL01].MEMBERS,\n        [0CALDAY].[LEVEL01].MEMBERS,\n\t[0CALMONTH2].[LEVEL01].MEMBERS } ON ROWS\nFROM ZASSDM02/ZASSD_EXPORTACIONES_02_PBI\nSAP VARIABLES [ZYCAP0] INCLUDING '2020' [ZITMES] INCLUDING '10'"
+					},
+					"sink": {
+						"type": "DelimitedTextSink",
+						"storeSettings": {
+							"type": "AzureBlobFSWriteSettings"
+						},
+						"formatSettings": {
+							"type": "DelimitedTextWriteSettings",
+							"quoteAllText": true,
+							"fileExtension": ".txt"
+						}
 					},
 					"enableStaging": false,
 					"translator": {
-						"type": "TabularTranslator"
+						"type": "TabularTranslator",
+						"mappings": [
+							{
+								"source": {
+									"name": "[0BILL_TYPE].[LEVEL01].[MEMBER_CAPTION]",
+									"type": "String"
+								},
+								"sink": {
+									"name": "[0BILL_TYPE].[LEVEL01].[MEMBER_CAPTION]",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "[0COMP_CODE].[LEVEL01].[MEMBER_CAPTION]",
+									"type": "String"
+								},
+								"sink": {
+									"name": "[0COMP_CODE].[LEVEL01].[MEMBER_CAPTION]",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "[0DOC_NUMBER].[LEVEL01].[MEMBER_CAPTION]",
+									"type": "String"
+								},
+								"sink": {
+									"name": "[0DOC_NUMBER].[LEVEL01].[MEMBER_CAPTION]",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "[0CALDAY].[LEVEL01].[MEMBER_CAPTION]",
+									"type": "String"
+								},
+								"sink": {
+									"name": "[0CALDAY].[LEVEL01].[MEMBER_CAPTION]",
+									"type": "DateTime"
+								}
+							},
+							{
+								"source": {
+									"name": "[0CALMONTH2].[LEVEL01].[MEMBER_CAPTION]",
+									"type": "String"
+								},
+								"sink": {
+									"name": "[0CALMONTH2].[LEVEL01].[MEMBER_CAPTION]",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "[Measures].[624IRRSR9LDWI932059BH0PM2]",
+									"type": "Decimal"
+								},
+								"sink": {
+									"name": "[Measures].[624IRRSR9LDWI932059BH0PM2]",
+									"type": "Decimal"
+								}
+							},
+							{
+								"source": {
+									"name": "[Measures].[624IRRSR9LDWI932059BH246I]",
+									"type": "Decimal"
+								},
+								"sink": {
+									"name": "[Measures].[624IRRSR9LDWI932059BH246I]",
+									"type": "Decimal"
+								}
+							},
+							{
+								"source": {
+									"name": "[Measures].[624IRRSR9LDWI932059BH2GTM]",
+									"type": "Decimal"
+								},
+								"sink": {
+									"name": "[Measures].[624IRRSR9LDWI932059BH2GTM]",
+									"type": "Decimal"
+								}
+							}
+						]
 					}
 				},
 				"inputs": [
 					{
 						"referenceName": "ZITSDC02",
+						"type": "DatasetReference"
+					}
+				],
+				"outputs": [
+					{
+						"referenceName": "DelimitedText1",
 						"type": "DatasetReference"
 					}
 				]
