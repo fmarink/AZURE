@@ -13,7 +13,12 @@
 					"secureOutput": false,
 					"secureInput": false
 				},
-				"userProperties": [],
+				"userProperties": [
+					{
+						"name": "Destination",
+						"value": "filedl/venta/venta.csv"
+					}
+				],
 				"typeProperties": {
 					"source": {
 						"type": "SapBwSource",
@@ -211,8 +216,8 @@
 								},
 								"sink": {
 									"name": "calday",
-									"type": "DateTime",
-									"physicalType": "date"
+									"type": "String",
+									"physicalType": "varchar"
 								}
 							},
 							{
