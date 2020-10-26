@@ -1,0 +1,12 @@
+{
+	"name": "ZITSDC02",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "SapBwbwp",
+			"type": "LinkedServiceReference"
+		},
+		"annotations": [],
+		"type": "SapBwCube",
+		"schema": []
+	}
+}
