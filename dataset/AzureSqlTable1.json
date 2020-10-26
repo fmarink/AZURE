@@ -1,0 +1,55 @@
+{
+	"name": "AzureSqlTable1",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "AzureSqlDatabase1",
+			"type": "LinkedServiceReference"
+		},
+		"annotations": [],
+		"type": "AzureSqlTable",
+		"schema": [
+			{
+				"name": "bill_type",
+				"type": "varchar"
+			},
+			{
+				"name": "comp_code",
+				"type": "varchar"
+			},
+			{
+				"name": "docnumber",
+				"type": "varchar"
+			},
+			{
+				"name": "calday",
+				"type": "date"
+			},
+			{
+				"name": "mes",
+				"type": "varchar"
+			},
+			{
+				"name": "peso",
+				"type": "decimal",
+				"precision": 16,
+				"scale": 3
+			},
+			{
+				"name": "fobusd",
+				"type": "decimal",
+				"precision": 16,
+				"scale": 3
+			},
+			{
+				"name": "fobclp",
+				"type": "decimal",
+				"precision": 16,
+				"scale": 3
+			}
+		],
+		"typeProperties": {
+			"schema": "dbo",
+			"table": "venta"
+		}
+	}
+}
