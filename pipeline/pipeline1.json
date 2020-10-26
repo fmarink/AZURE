@@ -1,0 +1,34 @@
+{
+	"name": "pipeline1",
+	"properties": {
+		"activities": [
+			{
+				"name": "Ventadia",
+				"type": "Copy",
+				"dependsOn": [],
+				"policy": {
+					"timeout": "7.00:00:00",
+					"retry": 0,
+					"retryIntervalInSeconds": 30,
+					"secureOutput": false,
+					"secureInput": false
+				},
+				"userProperties": [],
+				"typeProperties": {
+					"source": {
+						"type": "SapBwSource",
+						"query": "SELECT\n\t{ [Measures].[624IRRSR9LDWI932059BH0PM2],\n\t[Measures].[624IRRSR9LDWI932059BH246I],\n\t[Measures].[624IRRSR9LDWI932059BH2GTM] } ON COLUMNS,\n\tNON EMPTY\n\t{ [0BILL_TYPE].[LEVEL01].MEMBERS,\n\t[0COMP_CODE].[LEVEL01].MEMBERS,\n\t[0DOC_NUMBER].[LEVEL01].MEMBERS } ON ROWS\nFROM ZASSDM02/ZASSD_EXPORTACIONES_02_PBI\nSAP VARIABLES [ZYCAP0] INCLUDING '2020' [ZITMES] INCLUDING '10'"
+					},
+					"enableStaging": false
+				},
+				"inputs": [
+					{
+						"referenceName": "ZITSDC02",
+						"type": "DatasetReference"
+					}
+				]
+			}
+		],
+		"annotations": []
+	}
+}
