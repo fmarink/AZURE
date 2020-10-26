@@ -5,12 +5,12 @@
 		"annotations": [],
 		"type": "SapOpenHub",
 		"typeProperties": {
-			"clientId": "BWD",
+			"clientId": "300",
 			"language": "ES",
 			"userName": "fmarin",
 			"server": "192.168.9.68",
 			"systemNumber": "00",
-			"encryptedCredential": "eyJDcmVkZW50aWFsSWQiOiIyMzk2OGQwNC1kZjE1LTRkZjgtYjlhNy1hZDAxZjI3ODI0ZWUiLCJWZXJzaW9uIjoiMi4wIiwiQ2xhc3NUeXBlIjoiTWljcm9zb2Z0LkRhdGFQcm94eS5Db3JlLkludGVyU2VydmljZURhdGFDb250cmFjdC5DcmVkZW50aWFsU1UwNkNZMTQifQ=="
+			"encryptedCredential": "eyJDcmVkZW50aWFsSWQiOiI2YzAwMDJlMC1kMjYwLTQ3NWMtYjI1ZS01YjhkNzIyZDA1NGEiLCJWZXJzaW9uIjoiMi4wIiwiQ2xhc3NUeXBlIjoiTWljcm9zb2Z0LkRhdGFQcm94eS5Db3JlLkludGVyU2VydmljZURhdGFDb250cmFjdC5DcmVkZW50aWFsU1UwNkNZMTQifQ=="
 		},
 		"connectVia": {
 			"referenceName": "integrationRuntime1",
