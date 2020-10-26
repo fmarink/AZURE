@@ -10,7 +10,7 @@
 			"userName": "fmarin",
 			"server": "192.168.9.85",
 			"systemNumber": "00",
-			"encryptedCredential": "eyJDcmVkZW50aWFsSWQiOiIyMmIwYzkzZi0wYTYwLTQzY2YtOTJiOC1lY2U5ODc2MTA5ODIiLCJWZXJzaW9uIjoiMi4wIiwiQ2xhc3NUeXBlIjoiTWljcm9zb2Z0LkRhdGFQcm94eS5Db3JlLkludGVyU2VydmljZURhdGFDb250cmFjdC5DcmVkZW50aWFsU1UwNkNZMTQifQ=="
+			"encryptedCredential": "eyJDcmVkZW50aWFsSWQiOiI5NWU4ZDM0OC1hMTY0LTRiOGYtYTZiOC1kNjljZTg1N2M1MTMiLCJWZXJzaW9uIjoiMi4wIiwiQ2xhc3NUeXBlIjoiTWljcm9zb2Z0LkRhdGFQcm94eS5Db3JlLkludGVyU2VydmljZURhdGFDb250cmFjdC5DcmVkZW50aWFsU1UwNkNZMTQifQ=="
 		},
 		"connectVia": {
 			"referenceName": "integrationRuntime1",
